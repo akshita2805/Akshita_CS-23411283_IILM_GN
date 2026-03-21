@@ -1,0 +1,28 @@
+class Solution:
+    def rotateRight(self, head, k):
+        if not head or not head.next or k == 0:
+            return head
+        
+        # find length
+        length = 1
+        tail = head
+        
+        while tail.next:
+            tail = tail.next
+            length += 1
+        
+        # make circular
+        tail.next = head
+        
+        k = k % length
+        
+        steps = length - k
+        
+        new_tail = head
+        for _ in range(steps - 1):
+            new_tail = new_tail.next
+        
+        new_head = new_tail.next
+        new_tail.next = None
+        
+        return new_head
