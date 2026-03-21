@@ -1,0 +1,6 @@
+x=eval(input("Enter few inputs: "))
+print(type(x))
+x=eval(input("Enter few inputs: "))
+print(type(x))
+x=eval(input("Enter few inputs: "))
+print(type(x))
